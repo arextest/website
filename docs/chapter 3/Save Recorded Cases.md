@@ -1,3 +1,12 @@
+---
+sidebar_position: 4
+title: Traffic Replay
+keywords: 
+- Regression test
+- Automation Testing
+- Traffic Replay
+---
+
 ### Scenarios
 
 1. AREX can record real online traffic to generate rich test cases, which can then be saved for your needs to increase the number of test cases.
@@ -66,7 +75,7 @@ The **arex-record-id** in the request **Headers** is the recording ID, if you wa
 
 The **Mock** tab shows all data and third-party dependencies mocked from the production environment during recording. 
 
-The left side displays the recorded request messages sent to the main interface and external dependencies, while the right side displays the corresponding response messages.
+The left side displays the mocked request messages sent to the main interface and external dependencies, while the right side displays the corresponding response messages.
 
 The mocked data can be edited, so if you are not satisfied with it, you can manually modify it and select "Save" to save it. Then, in next repaly, you can request by using the modified mock data.
 

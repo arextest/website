@@ -1,5 +1,10 @@
 ---
 sidebar_position: 2
+title: AREX 自定义安装
+keywords: 
+- 回归测试
+- Mock
+- 流量录制
 ---
 
 ## 多实例安装
@@ -8,16 +13,16 @@ sidebar_position: 2
 
 如要进行多实例安装，可通过 AREX 提供的 docker-compose-distribute.yml 文件进行缺省安装，运行以下命令：
 
-```
+```shell
 git clone https://github.com/arextest/deployments.git 
 cd deployments 
 docker-compose -f docker-compose-distribute.yml up -d
 ```
 
-```
-## 停止命令 
+```shell
+# 停止命令 
 docker-compose -f docker-compose-distribute.yml down -v 
-## PS命令 
+# PS命令 
 docker-compose -f docker-compose-distribute.yml ps
 ```
 
@@ -46,7 +51,7 @@ docker-compose -f docker-compose-distribute.yml ps
 
 #### Windows
 
-```
+```shell
 # 将存储服务的 URL 设置为http://10.3.1.4:8080
 set JAVA_OPTS=-Darex.storage.service.url=http://10.3.1.4:8080
 
@@ -59,8 +64,8 @@ set JAVA_OPTS=-Darex.storage.service.url=http://10.3.1.4:8080
 
 #### Linux
 
-```
-export JAVA_OPTS=-Darex.storage.service.url=http://10.3.1.4:8080 -Darex.storage.mongo.host=mongodb://username:password@my-mongodb:27017/arex_storage_db -Darex.report.email.host=smtp.msn.com // echo $SERVICE_REPORT_URL 查看配置
+```shell
+export JAVA_OPTS=-Darex.storage.service.url=http://10.3.1.4:8080 -Darex.storage.mongo.host=mongodb://username:password@my-mongodb:27017/arex_storage_db -Darex.report.email.host=smtp.msn.com
 ```
 
 ### AREX 前端配置
@@ -71,7 +76,7 @@ export JAVA_OPTS=-Darex.storage.service.url=http://10.3.1.4:8080 -Darex.storage.
 
 运行如下命令进行设置：
 
-```
+```shell
 # 设置报告分析服务地址 
 set SERVICE_REPORT_URL=http://10.192.1.1:8080  
 
@@ -83,7 +88,7 @@ set SERVICE_SCHEDULE_URL=http://10.192.1.1:8080
 
 运行如下命令进行设置：
 
-```
+```shell
 # 设置报告分析服务地址 
 export SERVICE_REPORT_URL=http://10.192.1.1:8080
 
@@ -95,7 +100,7 @@ export SERVICE_REPORT_URL=http://10.192.1.1:8080
 
 #### 源码配置
 
-```
+```conf
 arex.storage.service.api=http://arex-storage-service:8080 
 arex.report.service.api=http://arex-report-service:8080
 ```
@@ -104,7 +109,7 @@ arex.report.service.api=http://arex-report-service:8080
 
 例：
 
-```
+```yml
 environment:
   - "JAVA_OPTS=-Darex.storage.service.api=http://10.3.1.1:8080 -Darex.report.service.api=http://10.3.1.2:8080 "
 ```
@@ -113,7 +118,7 @@ environment:
 
 #### 源码配置
 
-```
+```conf
 arex.storage.cache.expired.seconds=7200 
 arex.storage.cache.provider.host= 
 mongo.host=mongodb://arex:iLoveArex@mongodb:27017/arex_storage_db
@@ -132,7 +137,7 @@ environment:
 
 #### 源码配置
 
-```
+```conf
 arex.report.mongo.uri=mongodb://arex:iLoveArex@ip:27017/arex_storage_db 
 arex.storage.service.url=http://arex-storage-service:8080 
 arex.ui.url=http://your_arex_ip_address:port
@@ -142,7 +147,7 @@ arex.ui.url=http://your_arex_ip_address:port
 
 例：
 
-```
+```yml
 environment:
   - "JAVA_OPTS=-Darex.storage.service.url=http://10.3.1.4:8080 -Darex.storage.mongo.host=mongodb://username:password@my-mongodb:27017/arex_storage_db -Darex.report.email.host=smtp.msn.com -Darex.ui.url=http://your_arex_ip_address:port" 
 ```

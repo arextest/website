@@ -1,5 +1,10 @@
 ---
 sidebar_position: 2
+title: AREX 比对测试
+keywords: 
+- 回归测试
+- 比对测试
+- 流量录制
 ---
 
 AREX 比对测试是将相同的请求报文发送至不同的接口地址，比对响应报文的差异。

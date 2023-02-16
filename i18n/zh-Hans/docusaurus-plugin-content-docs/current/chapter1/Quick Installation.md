@@ -1,5 +1,10 @@
 ---
 sidebar_position: 1
+title: AREX 快速安装
+keywords: 
+- 回归测试
+- 自动化测试
+- 流量录制
 ---
 ## 前提条件
 
@@ -11,14 +16,14 @@ Docker 和 Docker Compose。
 
 首先，通过 git 命令克隆 AREX 仓库：
 
-```
+```shell
 git clone https://github.com/arextest/deployments.git 
 cd deployments
 ```
 
 接着通过 `docker-compose` 启动 AREX。
 
-```
+```shell
 docker-compose up -d
 ```
 
@@ -49,32 +54,32 @@ arex-storage    catalina.sh run                   Up      0.0.0.0:8093→8080/tc
 
 检查所有服务日志命令
 
-```
+```shell
 cd deployments 
 docker-compose logs
 ```
 
 检查 AREX 日志命令
 
-```
+```shell
 docker-compose logs arex
 ```
 
 检查调度服务日志命令
 
-```
+```shell
 docker-compose logs arex-schedule-service
 ```
 
 检查报告分析服务日志命令
 
-```
+```shell
 docker-compose logs arex-report-service
 ```
 
 检查存储服务日志命令
 
-```
+```shell
 docker-compose logs arex-storage-service
 ```
 
@@ -88,7 +93,7 @@ AREX Agent 的运行依赖 AREX 的存储服务([AREX storage service](https://g
 
 首先通过 git 进行 arex-agent-java 项目的拉取以及编译：
 
-```
+```shell
 git clone https://github.com/arextest/arex-agent-java.git 
 cd arex-agent-java 
 mvn clean install
@@ -103,30 +108,32 @@ mvn clean install
 通过运行如下命令修改两个依赖服务的主机和端口：
 
 ```
-
 java -javaagent:/path/to/arex-agent-<version>.jar
       -Darex.service.name=your-service-name
       -Darex.storage.service.host=[storage.service.host:port](storage.service.host:port) 
       -jar your-application.jar
 ```
 
-> 注：
-> - arex-agent- .jar 是 AREX 提供或者自行编译的 jar 包名称，注意修改路径
-> - your-service-name 你的被测试服务的名称，不同的服务需使用不同的名称
-> - your-application.jar 你的被测试服务的 jar 包文件
+:::note
+
+- arex-agent- .jar 是 AREX 提供或者自行编译的 jar 包名称，注意修改路径
+- your-service-name 你的被测试服务的名称，不同的服务需使用不同的名称
+- your-application.jar 你的被测试服务的 jar 包文件
+
+:::
 
 #### 配置文件运行模式
 
 你也可以通过新建一个名为：arex.agent 的 conf 配置文件来进行配置，其中内容为：
 
-```other
+```conf title="arex.agent.conf"
 arex.service.name=your-service-name  
 arex.storage.service.host=<storage.service.host:port> 
 ```
 
 然后运行如下命令完成配置：
 
-```
+```shell
 java -javaagent:/path/to/arex-agent-<version>.jar
       -Darex.config.path=/path/to/arex.agent.conf
       -jar your-application.jar
@@ -136,19 +143,21 @@ java -javaagent:/path/to/arex-agent-<version>.jar
 
 比如运行 tomcat，可以直接修改 catalina.sh，修改 JAVA_OPTS 运行，也可以直接在环境变量中配置，以 Linux 运行为例：
 
-```
+```shell
 export JAVA_OPTS="-javaagent:/path/to/arex-agent-<version>.jar -Darex.config.path=/path/to/arex.agent.conf"
 ```
 
 #### 通过 ArexCli 运行的本地模式
 
-```
+```shell
 git clone https://github.com/arextest/arex-agent-java.git
 cd arex-agent-java
 mvn clean install
 ```
+
 运行如下命令行执行 arex-cli.sh 脚本文件
-```
+
+```shell
 chmod 550 bin/arex-cli.sh
 cd ./bin/                      
 ./arex-cli.sh
@@ -156,7 +165,7 @@ cd ./bin/
 
 或者以下命令行即可通过 ArexCli 启动本地模式：
 
-```
+```shell
 git clone https://github.com/arextest/arex-agent-java.git 
 cd arex-agent-java 
 mvn clean install 
@@ -211,7 +220,7 @@ java -cp "./arex-cli-parent/arex-cli/target/arex-cli.jar" io.arex.cli.ArexCli
 
 进入 docker-compose.yml 所在目录，更新前需先停止原有服务：（比如 0.2.4 版本中去除了配置服务，在配置服务未停止时更新会导致更新失败，需要用户自己手动停止）
 
-```
+```shell
 cd deployments 
 docker-compose down -v
 ```
@@ -220,7 +229,7 @@ docker-compose down -v
 
 更新 deployments 仓库，重新启动 AREX：
 
-```
+```shell
 git pull 
 docker-compose up -d
 ```

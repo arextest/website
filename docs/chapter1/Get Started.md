@@ -1,5 +1,10 @@
 ---
 sidebar_position: 4
+title: AREX User Guide
+keywords: 
+- Regression Testing
+- Mock testing
+- Traffic Replay
 ---
 
 ## Creating collection

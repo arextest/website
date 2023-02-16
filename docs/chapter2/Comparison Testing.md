@@ -1,5 +1,10 @@
 ---
 sidebar_position: 2
+title: AREX Comparison Testing
+keywords: 
+- Regression Testing
+- Automation Testing
+- Traffic Replay
 ---
 
 AREX comparison testing involves sending the same request message to different API addresses and comparing the differences in the response messages.

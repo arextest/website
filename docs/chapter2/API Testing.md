@@ -1,5 +1,10 @@
 ---
 sidebar_position: 1
+title: API Testing
+keywords: 
+- Regression test
+- API Testing
+- software testing
 ---
 
 ## Creating new requests

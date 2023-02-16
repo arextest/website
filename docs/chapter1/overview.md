@@ -1,5 +1,10 @@
 ---
 sidebar_position: 3
+title: AREX Interface Overview
+keywords: 
+- Regression Testing
+- Automation Testing
+- Traffic Replay
 ---
 
 After installation, you can access the **AREX-UI** via **Chrome** browser:

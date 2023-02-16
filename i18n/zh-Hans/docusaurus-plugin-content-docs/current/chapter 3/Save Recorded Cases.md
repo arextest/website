@@ -1,5 +1,10 @@
 ---
 sidebar_position: 4
+title: 固化测试用例
+keywords: 
+- 回归测试
+- 测试用例
+- 自动化测试
 ---
 
 ### 使用场景

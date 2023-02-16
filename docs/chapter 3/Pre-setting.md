@@ -1,5 +1,10 @@
 ---
 sidebar_position: 1
+title: Traffic Replay
+keywords: 
+- Regression test
+- Automation Testing
+- Traffic Replay
 ---
 
 Traffic recording and replay is done by recording your live traffic and then reusing it(replaying) in the testing environment for testing the correctness of code logic.
@@ -95,7 +100,7 @@ Usually, an array in the response contains multiple elements, and the order of e
 
 By configuring the keys of the elements in the array in **Nodes Sort** tab, we can avoid the failure of comparison due to different ordering of the elements in the array of the response during the matching process.
 
-1. Select the edit icon![](../resource/c3.edit.png), enter the response from this interface manually, and select **save**.
+1. Select the edit icon ![](../resource/c3.edit.png), enter the response of this interface manually, and select **save**.
 
     ![编辑响应体](../resource/c3.nodesort2.png)
 

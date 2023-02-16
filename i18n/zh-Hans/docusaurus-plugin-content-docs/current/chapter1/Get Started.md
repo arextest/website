@@ -1,5 +1,10 @@
 ---
 sidebar_position: 4
+title: AREX 快速入门指南
+keywords: 
+- 回归测试
+- Mock
+- 流量录制
 ---
 
 ## 新建集合

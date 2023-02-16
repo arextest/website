@@ -1,5 +1,10 @@
 ---
 sidebar_position: 4
+title: AREX Environment Management
+keywords: 
+- Regression Testing
+- Automation Testing
+- Traffic Replay
 ---
 
 A project will be in different environments at different stages, such as development environment, test environment, and production environment. Usually, different environments have different pre-fixed URLs and different parameter values for the interfaces. Changing the pre-fixed URL and parameters frequently due to different environments is very inconvenient. Different environments can be created in AREX and different environment variables can be set in each environment. When testing in different environments, you can simply switch environments.

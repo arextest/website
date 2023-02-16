@@ -1,5 +1,10 @@
 ---
 sidebar_position: 2
+title: AREX Installation
+keywords: 
+- Regression Testing
+- Automation Testing
+- Traffic Replay
 ---
 
 ## Multi-instance installation
@@ -8,15 +13,18 @@ In the previous [Quick Installation](Quick%20Installation), we introduced how to
 
 If you want to install multiple instances according to your needs, you can use the provided `docker-compose-distribute.yml` file for a simple Out-of-the-box setup. Run the following command:
 
-```Powershell
+```shell
 git clone https://github.com/arextest/deployments.git 
 cd deployments 
 docker-compose -f docker-compose-distribute.yml up -d
 ```
 
-```
-docker-compose -f docker-compose-distribute.yml down -v // Stopping command
-docker-compose -f docker-compose-distribute.yml ps // List running containers and their status
+```shell
+# Stopping command
+docker-compose -f docker-compose-distribute.yml down -v
+
+# List running containers and their status
+docker-compose -f docker-compose-distribute.yml ps
 ```
 
 The default setup of the scheduling and storage service involves 2 instances, with the following specific components:
@@ -48,7 +56,7 @@ However, you will need to configure the service-to-service calls yourself. Detai
 
 Set environment variables in the JAVA_OPTS environment variable.
 
-```
+```shell
 # set the URL for a storage service to http://10.3.1.4:8080
 set JAVA_OPTS=-Darex.storage.service.url=http://10.3.1.4:8080
 
@@ -61,19 +69,19 @@ set JAVA_OPTS=-Darex.storage.service.url=http://10.3.1.4:8080
 
 #### Linux
 
-```
+```shell
 export JAVA_OPTS=-Darex.storage.service.url=http://10.3.1.4:8080 -Darex.storage.mongo.host=mongodb://username:password@my-mongodb:27017/arex_storage_db -Darex.report.email.host=smtp.msn.com
 ```
 
 ### Configure AREX UI
 
-You need to configure two environment variables需要配置 2 个环境变量，分别对应报告分析服务地址、和调度服务地址。
+You need to configure two environment variables, corresponding to the report service url, and the schedule service url, respectively.
 
 #### Windows 
 
 Run the following command:
 
-```
+```shell
 # set the URL for a report service to http://10.192.1.1:8080
 set SERVICE_REPORT_URL=http://10.192.1.1:8080
 
@@ -85,7 +93,7 @@ set SERVICE_SCHEDULE_URL=http://10.192.1.1:8080
 
 Run the following command:
 
-```
+```shell
 # set the URL for a report service to http://10.192.1.1:8080
 export SERVICE_REPORT_URL=http://10.192.1.1:8080
 
@@ -97,7 +105,7 @@ export SERVICE_REPORT_URL=http://10.192.1.1:8080
 
 #### Configuration with source code
 
-```
+```conf
 arex.storage.service.api=http://arex-storage-service:8080 
 arex.report.service.api=http://arex-report-service:8080
 ```
@@ -106,7 +114,7 @@ arex.report.service.api=http://arex-report-service:8080
 
 For example:
 
-```
+```yml
 environment:
   - "JAVA_OPTS=-Darex.storage.service.api=http://10.3.1.1:8080 -Darex.report.service.api=http://10.3.1.2:8080 "
 ```
@@ -115,7 +123,7 @@ environment:
 
 #### Configuration with source code
 
-```
+```conf
 arex.storage.cache.expired.seconds=7200 
 arex.storage.cache.provider.host= 
 mongo.host=mongodb://arex:iLoveArex@mongodb:27017/arex_storage_db
@@ -125,7 +133,7 @@ mongo.host=mongodb://arex:iLoveArex@mongodb:27017/arex_storage_db
 
 For example:
 
-```
+```yml
 environment:
   - "JAVA_OPTS=-Darex.storage.service.api=http://arex-storage-service:8080 -Darex.report.service.api=http://arex-report-service:8080
 ```
@@ -134,7 +142,7 @@ environment:
 
 #### Configuration with source code
 
-```
+```conf
 arex.report.mongo.uri=mongodb://arex:iLoveArex@ip:27017/arex_storage_db 
 arex.storage.service.url=http://arex-storage-service:8080 
 arex.ui.url=http://your_arex_ip_address:port
@@ -144,7 +152,7 @@ arex.ui.url=http://your_arex_ip_address:port
 
 For example:
 
-```
+```yml
 environment:
   - "JAVA_OPTS=-Darex.storage.service.url=http://10.3.1.4:8080 -Darex.storage.mongo.host=mongodb://username:password@my-mongodb:27017/arex_storage_db -Darex.report.email.host=smtp.msn.com -Darex.ui.url=http://your_arex_ip_address:port" 
 ```

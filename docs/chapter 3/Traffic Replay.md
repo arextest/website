@@ -1,5 +1,10 @@
 ---
 sidebar_position: 2
+title: Traffic Replay
+keywords: 
+- Regression test
+- Automation Testing
+- Traffic Replay
 ---
 
 ## Start replay

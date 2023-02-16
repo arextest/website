@@ -1,5 +1,10 @@
 ---
 sidebar_position: 2
+title: AREX 流量回放
+keywords: 
+- 回归测试
+- 流量回放
+- 自动化测试
 ---
 
 ## 开始回放

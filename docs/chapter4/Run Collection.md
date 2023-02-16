@@ -1,5 +1,10 @@
 ---
 sidebar_position: 1
+title: AREX batch run test cases
+keywords: 
+- Regression Testing
+- Automation Testing
+- Traffic Replay
 ---
 
 AREX allows you to automate API testing by running a collection of saved requests. This is a convenient way to perform automated API testing on a large number of test cases at once, rather than running each test case individually.

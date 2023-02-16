@@ -1,5 +1,10 @@
 ---
 sidebar_position: 3
+title: Traffic Record
+keywords: 
+- Regression test
+- Automation Testing
+- Traffic Replay
 ---
 
 **Mock** is to replace the dependent objects with mock objects. These mock objects simulate or ‘mock’ the behavior of real objects and exhibit the exact characteristics of the authentic ones, making the testing process faster with mock objects.

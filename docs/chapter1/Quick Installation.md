@@ -1,5 +1,10 @@
 ---
 sidebar_position: 1
+title: AREX Installation
+keywords: 
+- Regression Testing
+- Automation Testing
+- Traffic Replay
 ---
 
 ## Pre-preparation
@@ -14,14 +19,14 @@ To get started, you can install AREX with Docker.
 
 First clone the `deployments` repostiory:
 
-```
+```shell
 git clone https://github.com/arextest/deployments.git 
 cd deployments
 ```
 
 Now you can use `docker-compose` to start AREX.
 
-```
+```shell
 docker-compose up -d
 ```
 
@@ -38,7 +43,7 @@ After installation, all components including **Front-End**, **Services**, **Data
 
 You can check the status and ports of each service by running the command `docker-compose ps` on the host running Docker.
 
-```
+```shell
 [~ deployments]# docker-compose ps   
 Name            Command                           State         Ports 
 ------------------------------------------------------------------------------------------ 
@@ -52,32 +57,32 @@ arex-storage    catalina.sh run                   Up      0.0.0.0:8093→8080/tc
 
 Check all service log:
 
-```
+```shell
 cd deployments 
 docker-compose logs
 ```
 
 Check AREX logs:
 
-```
+```shell
 docker-compose logs arex
 ```
 
 Check **Schedule Service** log:
 
-```
+```shell
 docker-compose logs arex-schedule-service
 ```
 
 Check **Report Service** log:
 
-```
+```shell
 docker-compose logs arex-report-service
 ```
 
 Check **Storage Service** log:
 
-```
+```shell
 docker-compose logs arex-storage-service
 ```
 
@@ -91,7 +96,7 @@ The operation of AREX Agent depends on the **Storage Service** of AREX.([AREX st
 
 First clone the `arex-agent-java` repostiory:
 
-```
+```shell
 git clone https://github.com/arextest/arex-agent-java.git 
 cd arex-agent-java 
 mvn clean install
@@ -105,30 +110,33 @@ AREX Agent can be deployed by the different methods listed below:
 
 Set the host and port of the two dependent services:
 
-```
+```shell
 java -javaagent:/path/to/arex-agent-<version>.jar
      -Darex.service.name=your-service-name
      -Darex.storage.service.host=<storage.service.host:port> //(The host IP of `deployments` after deployment in docker and the port of AREX storage service)    
      -jar your-application.jar
 ```
 
-> Note：
-> - `arex-agent.jar`: the name of the jar package provided by AREX or compiled by yourself, note the modified path
-> - your-service-name: the name of your tested service, different names for different services
-> - your-application.jar: the jar package of your tested service
+:::note
+
+- `arex-agent.jar`: the name of the jar package provided by AREX or compiled by yourself, note the modified path
+- your-service-name: the name of your tested service, different names for different services
+- your-application.jar: the jar package of your tested service
+
+:::
 
 #### With Configuration file
 
 You can create a new configuration file `arex.agent.conf` as shown below:
 
-```
+```conf title="arex.agent.conf"
 arex.service.name=your-service-name  
 arex.storage.service.host=<storage.service.host:port> 
 ```
 
 Then configure Agent by running:
 
-```
+```shell
 java -javaagent:/path/to/arex-agent-<version>.jar     
      -Darex.config.path=/path/to/arex.agent.conf     
      -jar your-application.jar
@@ -138,7 +146,7 @@ java -javaagent:/path/to/arex-agent-<version>.jar
 
 You can deploy AREX Agent with Tomcat by configuring `catalina.sh` file and set the `JAVA_OPTS` variable, or you can configure it directly in the environment variables. Here is an example of how to do this on Linux:
 
-```
+```shell
 export JAVA_OPTS=-Djavaagent:/path/to/arex-agent.jar -Darex.storage.path=/path/to/arex.agent.conf
 ```
 
@@ -148,7 +156,7 @@ You can then run Tomcat as usual. The AREX Agent will be automatically injected 
 
 Run the local mode with ArexCli:
 
-```
+```shell
 chmod 550 bin/arex-cli.sh 
 cd ./bin/ 
 ./arex-cli
@@ -156,7 +164,7 @@ cd ./bin/
 
 You can also run:
 
-```
+```shell
 git clone https://github.com/arextest/arex-agent-java.git 
 cd arex-agent-java 
 mvn clean install 
@@ -188,30 +196,31 @@ The supported commands:
 
 Note: In local mode, AREX uses [H2](https://www.h2database.com/) as a local storage to save test data, and no longer relies on the storage service. In addition, you will not be able to use the AREX UI interface.
 
-## AREX Deployment Scenarios
+## AREX Deployment Solutions
 
-### Single AREX Service Deployment Scenario
-If the recording and replay environments, i.e. the production and test environments, can communicate with each other or have a tool Zone, deploy a single AREX service. As shown in the following diagram, data is recorded in the production environment, stored in AREX (Mongodb), and then replayed in the test environment.
+### Deploy Single AREX Service
+
+If the recording and replay environments, i.e. the production and test environments, can communicate with each other, you could just deploy one AREX service. As shown in the following diagram, data is recorded in the production environment, stored in AREX (Mongodb), and then replayed in the test environment.
 
 ![单服务](../resource/c1.single.service.png)
 
-### Multiple AREX Service Deployment Scenario
-If the production environment and the test environment cannot communicate with each other, i.e. the recording environment and the replay environment are isolated from each other and the test environment cannot access the database in the production environment, multiple AREX services need to be deployed.
+### Deploy Multiple AREX Service
+If the production environment and the test environment cannot communicate with each other, i.e. the recording environment and the replay environment are isolated from each other and the test environment cannot access the database in the production environment, then multiple AREX services need to be deployed.
 
 ![多服务](../resource/c1.multi.service.png)
 
-#### Deployment Flow
+#### Deployment Process
 
-1. Deploy AREX A in the production environment for recording data in the production environment and storing it in AREX (Mongodb).
-2. Deploy AREX B in the test environment for replaying data in the test environment.
+1. Deploy AREX A in the production environment for recording on-line traffic in the production environment and storing it in AREX (Mongodb).
+2. Deploy AREX B in the test environment for replaying the recorded traffic in the test environment.
 3. The DBA synchronizes the database data from AREX A to AREX B in a one-way manner.
-4. The AREX A environment application records data, and the AREX B environment application performs the playback.
+4. AREX A records on-line traffic from the producion environment, while AREX B replays the traffic in the test environment.
 
 ## Update
 
 First, enter the path where the `docker-compose.yml` file is located. You may need to manually stop all the dependent services before updating. For example, the configuration service has been removed in version 0.2.4, updating while the configuration service is still running will cause the update to fail.
 
-```
+```shell
 cd deployments 
 docker-compose down -v
 ```
@@ -220,7 +229,7 @@ Note: If you do not want to retain the original Mongodb data or logs, just delet
 
 Update the deployments repository by pulling the latest version and start AREX again by running:
 
-```
+```shell
 git pull 
 docker-compose up -d
 ```

@@ -1,5 +1,10 @@
 ---
 sidebar_position: 3
+title: AREX 前置脚本与后置脚本
+keywords: 
+- 回归测试
+- 自动化测试
+- 流量录制
 ---
 
 AREX 通过脚本（`JavaScript`代码片段）可实现在接口请求或集合测试时添加动态行为。
@@ -86,7 +91,7 @@ AREX 通过脚本（`JavaScript`代码片段）可实现在接口请求或集合
 
 #### 环境变量
 
-```
+```JavaScript
 // 设置环境变量 
 arex.environment.set("variable_key", "variable_value");
 
@@ -98,7 +103,7 @@ arex.environment.delete("variable_key");
 ```
 #### 临时变量
 
-```
+```JavaScript
 // 设置临时变量
 arex.variables.set("variable_key", "variable_value")
 
@@ -113,13 +118,13 @@ arex.variables.delete("variable_key")
 
 #### 发送 GET 请求
 
-```
+```JavaScript
 let response = await arex.sendRequest({method:"GET",url:"http://10.5.153.1:8090/api/config/schedule/useResult/appId/arex-0.2.4.test2"});
 ```
 
 #### 发送 POST 请求
 
-```
+```JavaScript
 let response = await arex.sendRequest({url:"http://10.5.153.1:8088/api/report/queryDifferences",method:"POST",data:"{"categoryName":"ServletEntrance","operationName":"/owners/{ownerId}","planItemId":"633184edc9af0157f44eaeba"}",headers:{"Content-Type":"application/json","access-token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpbmZvIjoidGVzdCJ9.YeLmUW--fqrtmag1QTDmL8U7RVZlb34xPAAxorxSCPM"}});
 ```
 
@@ -127,7 +132,7 @@ let response = await arex.sendRequest({url:"http://10.5.153.1:8088/api/report/qu
 
 可实现连接到一个 MySQL 数据库，并执行一条 SQL 查询语句。
 
-```
+```JavaScript
 // 使用一个对象 connectConfig 来存储连接数据库所需的配置信息。其中包括数据库所在的主机地址（host）、端口号（port）、用户名（user）、密码（password）和数据库名（database）。
 let connectConfig={host:"10.5.153.1",port:"13306",user:"root",password:"",database:"community"};
 
@@ -140,7 +145,7 @@ let response = await arex.executeMySql(connectConfig,executeBody);
 
 ### 4. 断言请求返回的结果是否正确：
 
-```
+```JavaScript
 // 设置断言，判断响应状态码是否为 200
 arex.test("Status code is 200", ()=> {
     arex.expect(arex.response.status).toBe(200);

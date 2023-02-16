@@ -1,5 +1,10 @@
 ---
 sidebar_position: 3
+title: AREX Writing pre-request scripts and test scripts
+keywords: 
+- Regression Testing
+- Automation Testing
+- Traffic Replay
 ---
 
 AREX allows you to add dynamic behavior to requests and collections through scripting (`JavaScript` code snippets).
@@ -92,19 +97,19 @@ Your scripts can use the arex.environment methods to access and manipulate varia
 
 1. Set the variable with the specified name and value in the active environment:
 
-```
+```JavaScript
 arex.environment.set("variable_key", "variable_value");
 ```
 
 2. Get the variable with the specified name in the active environment:
 
-```
+```JavaScript
 arex.environment.get("variable_key");
 ```
 
 3. Delete the variable:
 
-```
+```JavaScript
 arex.environment.delete("variable_key");
 ```
 
@@ -112,19 +117,19 @@ arex.environment.delete("variable_key");
 
 1. Set the temporary variables with the specified name and value:
 
-```
+```JavaScript
 arex.variables.set("variable_key", "variable_value")
 ```
 
 2. Get the temporary variables:
 
-``` 
+``` JavaScript
 arex.variables.get("variable_key")
 ```
 
 3. Delete the temporary variables:
 
-```
+```JavaScript
 arex.variables.delete("variable_key")
 ```
 
@@ -132,13 +137,13 @@ arex.variables.delete("variable_key")
 
 1. Sending GET requests
 
-```
+```JavaScript
 let response = await arex.sendRequest({method:"GET",url:"http://10.5.153.1:8090/api/config/schedule/useResult/appId/arex-0.2.4.test2"});  
 ```
 
 2. Sending POST requests
 
-```
+```JavaScript
 let response = await arex.sendRequest({url:"http://10.5.153.1:8088/api/report/queryDifferences",method:"POST",data:"{"categoryName":"ServletEntrance","operationName":"/owners/{ownerId}","planItemId":"633184edc9af0157f44eaeba"}",headers:{"Content-Type":"application/json","access-token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpbmZvIjoidGVzdCJ9.YeLmUW--fqrtmag1QTDmL8U7RVZlb34xPAAxorxSCPM"}});  
 ```
 
@@ -148,19 +153,19 @@ You can use pre-request scripts to connect to a MySQL database and execute a SQL
 
 Use a connectConfig object to store the configuration information required to connect to the database. This includes the host, port, username, password, and name of the database:
 
-```
+```JavaScript
 let connectConfig={host:"10.5.153.1",port:"13306",user:"root",password:"",database:"community"};
 ```
 
 Use another object executeBody to store information required for executing the SQL query. It includes a SQL query statement (sql) and a parameter array (params):
 
-```
+```JavaScript
 let executeBody={sql:"select * from mealrecomrestaurant where id = ?",params:[1]};
 ```
 
 Call the function arex.executeMySql(connectConfig, executeBody) to connect to the database and execute the SQL query. The function requires two parameters: the configuration information needed to connect to the database and the information needed to execute the SQL query. The return value of the function is assigned to the variable response:
 
-```
+```JavaScript
 let response = await arex.executeMySql(connectConfig,executeBody);
 ```
 
@@ -168,8 +173,7 @@ let response = await arex.executeMySql(connectConfig,executeBody);
 
 Test if the response status code is 200:
 
-```
-// 
+```JavaScript
 arex.test("Status code is 200", ()=> {
     arex.expect(arex.response.status).toBe(200);
 });
@@ -177,7 +181,7 @@ arex.test("Status code is 200", ()=> {
 
 Test if the age in the result messages is 18:
 
-```
+```JavaScript
 arex.test("Check JSON response property", ()=> {
     arex.expect(arex.response.body.age).toBe(18);
 });
