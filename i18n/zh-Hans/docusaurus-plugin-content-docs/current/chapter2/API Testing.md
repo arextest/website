@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: AREX 接口测试
+title: 接口测试
 keywords: 
 - 回归测试
 - 接口测试

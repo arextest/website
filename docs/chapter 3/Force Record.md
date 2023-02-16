@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: Traffic Record
+title: Force Record
 keywords: 
 - Regression test
 - Automation Testing

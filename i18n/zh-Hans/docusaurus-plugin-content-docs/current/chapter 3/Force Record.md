@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: AREX 强制录制
+title: 强制录制
 keywords: 
 - 回归测试
 - 流量回放

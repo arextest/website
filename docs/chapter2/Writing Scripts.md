@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: AREX Writing pre-request scripts and test scripts
+title: Writing Scripts
 keywords: 
 - Regression Testing
 - Automation Testing

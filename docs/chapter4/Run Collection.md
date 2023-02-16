@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: AREX batch run test cases
+title: Run Collection
 keywords: 
 - Regression Testing
 - Automation Testing

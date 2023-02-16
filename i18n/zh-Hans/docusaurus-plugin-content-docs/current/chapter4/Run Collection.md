@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: AREX 批量运行测试用例
+title: 批量运行测试用例
 keywords: 
 - 回归测试
 - 测试用例

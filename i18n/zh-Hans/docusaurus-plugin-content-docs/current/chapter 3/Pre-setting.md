@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: AREX 流量录制回放设置
+title: 录制回放设置
 keywords: 
 - 回归测试
 - 自动化测试

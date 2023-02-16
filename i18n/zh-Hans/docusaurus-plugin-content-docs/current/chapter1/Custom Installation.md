@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: AREX 自定义安装
+title: 自定义安装
 keywords: 
 - 回归测试
 - Mock

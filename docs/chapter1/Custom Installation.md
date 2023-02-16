@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: AREX Installation
+title: Custom Installation
 keywords: 
 - Regression Testing
 - Automation Testing

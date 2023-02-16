@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: AREX 前置脚本与后置脚本
+title: 编写脚本
 keywords: 
 - 回归测试
 - 自动化测试

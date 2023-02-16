@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: AREX 环境管理
+title: 环境管理
 keywords: 
 - 回归测试
 - 自动化测试

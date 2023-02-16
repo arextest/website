@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: AREX 快速入门指南
+title: 快速入门指南
 keywords: 
 - 回归测试
 - Mock

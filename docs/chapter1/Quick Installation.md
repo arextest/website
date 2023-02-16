@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: AREX Installation
+title: Quick Installation
 keywords: 
 - Regression Testing
 - Automation Testing
@@ -144,7 +144,7 @@ java -javaagent:/path/to/arex-agent-<version>.jar
 
 #### Set JAVA_OPTS variable
 
-You can deploy AREX Agent with Tomcat by configuring `catalina.sh` file and set the `JAVA_OPTS` variable, or you can configure it directly in the environment variables. Here is an example of how to do this on Linux:
+You can deploy AREX Agent through Tomcat by configuring `catalina.sh` file and set the `JAVA_OPTS` variable, or you can configure it directly in the environment variables. Here is an example of how to do this on Linux:
 
 ```shell
 export JAVA_OPTS=-Djavaagent:/path/to/arex-agent.jar -Darex.storage.path=/path/to/arex.agent.conf

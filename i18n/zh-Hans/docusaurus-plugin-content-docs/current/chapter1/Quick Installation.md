@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: AREX 快速安装
+title: 快速安装
 keywords: 
 - 回归测试
 - 自动化测试
@@ -141,11 +141,13 @@ java -javaagent:/path/to/arex-agent-<version>.jar
 
 #### 修改 JAVA_OPTS 运行模式
 
-比如运行 tomcat，可以直接修改 catalina.sh，修改 JAVA_OPTS 运行，也可以直接在环境变量中配置，以 Linux 运行为例：
+你可以通过运行 Tomcat，配置 `catalina.sh` 文件并修改 `JAVA_OPTS` 变量来部署 AREX Agent，也可以直接在环境变量中配置，以 Linux 运行为例：
 
 ```shell
 export JAVA_OPTS="-javaagent:/path/to/arex-agent-<version>.jar -Darex.config.path=/path/to/arex.agent.conf"
 ```
+
+之后你可以正常运行 Tomcat。AREX Agent 将被自动注入 JVM 中，并在 Tomcat 启动时运行。
 
 #### 通过 ArexCli 运行的本地模式
 

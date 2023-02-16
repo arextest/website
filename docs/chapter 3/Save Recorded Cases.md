@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: Traffic Replay
+title: Save Recorded Cases
 keywords: 
 - Regression test
 - Automation Testing

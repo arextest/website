@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: AREX 比对测试
+title: 比对测试
 keywords: 
 - 回归测试
 - 比对测试

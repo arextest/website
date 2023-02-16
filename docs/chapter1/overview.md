@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: AREX Interface Overview
+title: Overview
 keywords: 
 - Regression Testing
 - Automation Testing

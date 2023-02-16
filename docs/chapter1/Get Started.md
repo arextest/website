@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: AREX User Guide
+title: Get Started
 keywords: 
 - Regression Testing
 - Mock testing
