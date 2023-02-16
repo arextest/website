@@ -40,7 +40,7 @@ AREX comparison testing involves sending the same request message to different A
 
 Interferences such as random numbers or inconsistent order of array elements may cause differences in the comparison results and increase the cost of debugging for testers. To increase the efficiency of comparison testing, nodes in the response message can be configured in advance.
 
-Select the ![](../resource/c3.edit.png) icon, enter the response returned from your request in the code box manually, and click **save**.
+Select the **Edit Response** icon ![](../resource/c3.edit.png), enter the response of your request in the code box manually, and select **save**.
 
 ![编辑响应体](../resource/c2.edit.response.png)
 

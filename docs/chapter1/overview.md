@@ -50,21 +50,19 @@ The interface of AREX-UI consists of three primary areas: **Header**, **Sidebar*
 
 ![页眉](../resource/c1.header.png)
 
-- Invite: Invite others to collaborate on the same Workspace.
-
-- ![Settings icon](../resource/c1.setting.icon.png) Settings: Switch between Dark/Light mode and Chinese/English mode.
-
-- Sign out：You can sign out of your current account.
+- **Invite**: Invite others to collaborate on the same Workspace.
+- ![Settings icon](../resource/c1.setting.icon.png) **Setting**: Switch between Dark/Light mode and Chinese/English mode.
+- **Sign out**：You can sign out of your current account.
 
 ### Sidebar
 
 <img src="https://i.328888.xyz/2023/02/15/mxrXb.png" alt="Sidebar" width="400" height="" />
 
-- ![工作区](../resource/c1.workspace.icon.png)**Workspace**：
+- ![工作区](../resource/c1.workspace.icon.png)  **Workspace**：
     - Select the dropdown list to switch workspaces; 
     - Select **+** to create a new workspace; 
-    - Select ![编辑工作区](../resource/c1.rename.png) icon to edit the workspace；
-    - Select ![导入](../resource/c1.import.png) icon to import a local file as a collection into the workspace.
+    - Select  ![编辑工作区](../resource/c1.rename.png)  icon to edit the workspace；
+    - Select  ![导入](../resource/c1.import.png)  icon to import a local file as a collection into the workspace.
 - **Collection**：Groups of saved requests. You can send requests and manage your test cases here.
 - **Replay**: Execute traffic replay and view the reports.
 - **Environment**: Create a new environment and set environment variables.

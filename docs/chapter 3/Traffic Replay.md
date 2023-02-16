@@ -18,9 +18,11 @@ Enter the host that you want to test in the local/test environment in the **Targ
 
 After running, a detailed report will displayed in the workbench.
 
-Select the ![](... /resource/c3.rerun.png) icon to run again.
-
 ![回放报告](../resource/c3.report.png)
+
+Select **Delete** to delete this replay report.
+
+Select **Run Again** to run this replay again.
 
 **Pass Rate**：Ratio of successful replayed cases to all replayed cases (A successful replayed case means no difference compared with the recorded case).
 

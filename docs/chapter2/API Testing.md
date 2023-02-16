@@ -39,7 +39,7 @@ To send a query parameter, you can add it directly to the URL or open **Paramete
 
 ![parameters](../resource/c2.parameters.png)
 
-The ![disable params](../resource/c2.save.png)icon indicates that the parameter is in use, and you can click the icon to disable it.
+The ![disable params](../resource/c2.save.png) icon indicates that the parameter is in use, and you can click the icon to disable it.
 
 Select ![re-enable params](../resource/c2.ban.png) icon to re-enable.
 
