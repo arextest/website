@@ -1,39 +1,40 @@
 import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
+import Translate from "@docusaurus/Translate";
 
 type FeatureItem = {
-  title: string;
+  title: JSX.Element;
   Svg: React.ComponentType<React.ComponentProps<'svg'>>;
   description: JSX.Element;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Normal API Testing',
+      title: <Translate>Normal API Testing</Translate>,
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
-      <>
+      <Translate>
           Send requests to an API and evaluating the responses to ensure they meet the specified requirements and function as intended,with features like development, execution, verification, and management of test cases.
-      </>
+      </Translate>
     ),
   },
   {
-    title: 'API Comparison Testing',
+    title: <Translate>API Comparison Testing</Translate>,
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
-      <>
+      <Translate>
           Verify the APIs are functioning as intended after a backend system re-architecture or upgrade by sending the same request message to APIs in different environments and comparing the differences in the response messages.
-      </>
+      </Translate>
     ),
   },
   {
-    title: 'Traffic Recording and Replay',
+      title: <Translate>Traffic Recording and Replay</Translate>,
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
-      <>
+      <Translate>
           Record the real online traffic with the third-party dependency data, time and local cache type data, etc. mocked. Replay the traffic in testing environment to test the correctness of code logic.
-      </>
+      </Translate>
     ),
   },
 ];

@@ -3,7 +3,6 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Real automated API testing with real data.',
@@ -18,7 +17,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
+  organizationName: 'Trip.com', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
   "customFields": {
     // @ts-ignore
@@ -36,7 +35,24 @@ const config = {
     defaultLocale: 'en',
     locales: ['en', 'zh-Hans']
   },
-
+  plugins: [
+    [
+      'content-docs',
+      /** @type {import('@docusaurus/plugin-content-docs').Options} */
+      ({
+        id: 'community',
+        path: 'community',
+        routeBasePath: 'community',
+        editUrl: ({locale, versionDocsDirPath, docPath}) => {
+          if (locale !== 'en') {
+            return `https://crowdin.com/project/docusaurus-v2/${locale}`;
+          }
+          return `https://github.com/facebook/docusaurus/edit/main/website/${versionDocsDirPath}/${docPath}`;
+        },
+        sidebarPath: require.resolve('./sidebarsCommunity.js'),
+      }),
+    ],
+  ],
   presets: [
     [
       'classic',
@@ -77,6 +93,7 @@ const config = {
           items: [
             {to: '/docs/intro', label: 'Doc', position: 'left'},
             {to: '/blog', label: 'Blog', position: 'left'},
+            {to: '/community/contributing', label: 'Community', position: 'left'},
             {
               type: 'localeDropdown',
               position: 'right',

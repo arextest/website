@@ -1,15 +1,33 @@
 {
   "Who's Using This?": {
-    "message": "Who's Using This?"
+    "message": "谁在使用？"
   },
   "This project is used by many folks": {
-    "message": "This project is used by many folks"
+    "message": "这个项目被很多人使用"
   },
   "Are you using this project?": {
-    "message": "Are you using this project?"
+    "message": "你在使用这个项目吗？"
   },
   "Add your company": {
-    "message": "Add your company"
+    "message": "添加你的公司"
+  },
+  "Send requests to an API and evaluating the responses to ensure they meet the specified requirements and function as intended,with features like development, execution, verification, and management of test cases.": {
+    "message": "向API发送请求并评估响应，以确保它们满足指定的要求并按预期的功能运行，具有开发、执行、验证和管理测试案例等功能。"
+  },
+  "Verify the APIs are functioning as intended after a backend system re-architecture or upgrade by sending the same request message to APIs in different environments and comparing the differences in the response messages.": {
+    "message": "通过向不同环境中的API发送相同的请求信息并比较响应信息的差异，验证API在后端系统重新架构或升级后是否按预期运行。"
+  },
+  "Record the real online traffic with the third-party dependency data, time and local cache type data, etc. mocked. Replay the traffic in testing environment to test the correctness of code logic.": {
+    "message": "通过录制线上真实用户流量并在测试环境回放，实现自动化回归测试，解决回归测试用例编写难，数据构造难、测试效率低等难题。"
+  },
+  "Normal API Testing": {
+    "message": "常规接口测试"
+  },
+  "API Comparison Testing": {
+    "message": "比对测试"
+  },
+  "Traffic Recording and Replay": {
+    "message": "回归测试"
   },
   "theme.ErrorPageContent.title": {
     "message": "页面已崩溃。",
