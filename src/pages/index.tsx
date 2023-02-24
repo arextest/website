@@ -13,19 +13,26 @@ import Translate, {translate} from '@docusaurus/Translate'
 import styles from './index.module.css';
 import { UseCases } from '../components/use-cases';
 import { Section } from '../components/Section';
+import FocusCommunity from "@site/src/components/FocusCommunity";
 
 function HomepageHeader() {
     const {siteConfig} = useDocusaurusContext();
     return (
         <header className={clsx('hero hero--primary', styles.heroBanner)}>
             <div className="container">
-                <h1 className="hero__title">{siteConfig.title}</h1>
-                <p className="hero__subtitle">{siteConfig.tagline}</p>
+                <h1 className="hero__title">
+                    <Translate>
+                        {siteConfig.title}
+                    </Translate>
+                </h1>
+                <p className="hero__subtitle">
+                    <Translate>{siteConfig.tagline}</Translate>
+                </p>
                 <div className={styles.buttons}>
                     <Link
                         className="button button--secondary button--lg"
                         to="/docs/intro">
-                        Get Started
+                        <Translate>Get Started</Translate>
                     </Link>
                 </div>
             </div>
@@ -95,6 +102,7 @@ export default function Home(): JSX.Element {
                 {/*    <UseCases />*/}
                 {/*</div>*/}
             </main>
+            <FocusCommunity></FocusCommunity>
         </Layout>
     );
 }
