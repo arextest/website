@@ -1,8 +1,7 @@
 import React from "react"
 import Translate,{translate} from "@docusaurus/Translate";
 const FocusCommunity = () => {
-    const isZhHans = translate({message:'__language__'}) === 'zh-Hans'
-    console.log(translate({message:'__language__'}))
+    const isZhHans = translate({message:'__language__',description:''}) === 'zh-Hans'
     const s = [{
         lang:'en',
         title:'Twitter',
@@ -32,6 +31,7 @@ const FocusCommunity = () => {
         }]
 
   return <div style={{textAlign:'center',padding:'0 100px'}}>
+      <div style={{display:'none'}}>__language__</div>
       <h1>
           <Translate>Join Community</Translate>
           </h1>
