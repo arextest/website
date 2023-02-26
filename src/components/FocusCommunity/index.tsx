@@ -1,9 +1,8 @@
 import React from "react"
-import Translate from "@docusaurus/Translate";
-
+import Translate,{translate} from "@docusaurus/Translate";
 const FocusCommunity = () => {
-    const isZhHans = location.href.includes('zh-Hans')
-
+    const isZhHans = translate({message:'__language__'}) === 'zh-Hans'
+    console.log(translate({message:'__language__'}))
     const s = [{
         lang:'en',
         title:'Twitter',

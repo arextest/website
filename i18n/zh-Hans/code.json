@@ -1,4 +1,7 @@
 {
+  "__language__": {
+    "message": "zh-Hans"
+  },
   "Real automated API testing with real data.": {
     "message": "使用真实数据进行真正的自动化API测试。"
   },
