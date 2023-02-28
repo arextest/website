@@ -3,10 +3,10 @@
     "message": "zh-Hans"
   },
   "Real automated API testing with real data.": {
-    "message": "使用真实数据进行真正的自动化API测试。"
+    "message": "基于真实请求与数据的流量回放测试平台"
   },
   "AREX is an open-source automation testing tool which allows you to capture the online real data and replay it for testing. It provides rich testing features like API Testing, API Comparison Testing, Traffic Recording and Replay, etc.": {
-    "message": "AREX是一个开源的自动化测试工具，它允许您捕获在线真实数据并回放以进行测试。它提供了丰富的测试功能，如API测试、API比较测试、流量记录和回放等。"
+    "message": "AREX 通过录制线上真实用户流量并在测试环境回放实现自动化回归测试，提供了接口测试、接口比对测试、流量录制回放等丰富的自动化测试功能。"
   },
   "Join Community": {
     "message": "加入社区"
