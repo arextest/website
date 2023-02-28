@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[2535],{5641:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"\u5982\u4f55\u5728\u672c\u5730\u5feb\u901f\u5b89\u88c5\u90e8\u7f72 AREX","permalink":"/website/blog/deploy-arex"}]}')}}]);

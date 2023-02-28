@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[9915],{9258:e=>{e.exports=JSON.parse('{"label":"\u65b0\u624b\u5b9e\u8df5","permalink":"/website/zh-Hans/blog/tags/\u65b0\u624b\u5b9e\u8df5","allTagsPath":"/website/zh-Hans/blog/tags","count":1}')}}]);
