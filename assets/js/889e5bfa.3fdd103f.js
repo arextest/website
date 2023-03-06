@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[462],{1138:t=>{t.exports=JSON.parse('{"title":"Get Started","slug":"/category/get-started","permalink":"/docs/category/get-started","navigation":{"previous":{"title":"About AREX","permalink":"/docs/intro"},"next":{"title":"Quick Installation","permalink":"/docs/chapter1/Quick Installation"}}}')}}]);
