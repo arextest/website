@@ -20,7 +20,7 @@ keywords:
 
 [AREX](https://github.com/arextest) 是一款开源的自动化测试工具， 基于Java Agent技术，录制生产环境真实用户的流量，并在测试环境回放流量，同时智能比对分析回放结果，从而实现快速有效的回归测试。除此以外，也提供了用例管理、接口测试（脚本验证、双环境比对）等丰富的自动化测试功能，是一个不需要编程技术，也可快速上手的自动化测试工具平台。
 
-目前你可以通过 Docker-Compose 命令，一键缺省安装 AREX 所有基础服务组件，包括前端 UI，MongoDB 数据库，Redis 缓存，数据存取服务（Storage Service）， 调度服务（Schedule Service），分析服务（Report Service）等（如上图所示）。这种方式不需要手动安装和配置每个服务，大大简化了安装过程，提高部署效率。（详见[文档](https://arextest.github.io/website/zh-Hans/docs/intro/)）
+目前你可以通过 Docker-Compose 命令，一键缺省安装 AREX 所有基础服务组件，包括前端 UI，MongoDB 数据库，Redis 缓存，数据存取服务（Storage Service）， 调度服务（Schedule Service），分析服务（Report Service）等（如上图所示）。这种方式不需要手动安装和配置每个服务，大大简化了安装过程，提高部署效率。（详见[文档](https://arextest.github.io/website/zh-Hans/docs/chapter1/Quick%20Installation)）
 
 当然，你也可以通过在本机上构建 Docker 镜像的方式在本地对各个服务组件进行编译和安装。这种方式适用于需要对单个服务进行开发和测试的场景，可以避免安装不必要的依赖项，同时也适用于需要在离线环境下部署的场景。
 
