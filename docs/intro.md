@@ -7,7 +7,7 @@ sidebar_position: 1
 
 <img src="https://avatars.githubusercontent.com/u/103105168?s=200&v=4" alt="Arex Icon" width="27" height=""/>AREX
 
-**Real automated API testing with real data.**
+**Automated regression testing platform with real data**
 
 ## Introduction
 
