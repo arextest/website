@@ -151,6 +151,9 @@ const config = {
           theme: lightCodeTheme,
           darkTheme: darkCodeTheme,
         },
+        colorMode:{
+          disableSwitch:true
+        }
       }),
 };
 

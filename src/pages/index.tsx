@@ -9,11 +9,13 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 // import Layout from '@theme/Layout';
 import Translate, {translate} from '@docusaurus/Translate'
 // import Link from '@docusaurus/Link';
+import 'rc-collapse/assets/index.css'
 
 import styles from './index.module.css';
 import { UseCases } from '../components/use-cases';
 import { Section } from '../components/Section';
 import FocusCommunity from "@site/src/components/FocusCommunity";
+import VideoPropaganda from "@site/src/components/VideoPropaganda";
 
 function HomepageHeader() {
     const {siteConfig} = useDocusaurusContext();
@@ -66,6 +68,7 @@ export default function Home(): JSX.Element {
             description="Description will go into a meta tag in <head />">
             <HomepageHeader />
             <main>
+                <VideoPropaganda></VideoPropaganda>
                 <HomepageFeatures />
 
                 <div className="mainContainer">
