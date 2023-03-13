@@ -41,7 +41,7 @@ Only service interfaces with AREX Agent deployed will be able to perform forced 
 
 The newly added **Mock** is all the dependencies' data mocked during the recording process.
 
-    ![mock](../resource/c3.mock.png)
+![mock](../resource/c3.mock.png)
 
 If you are unsatisfied with the mocked data, you can manually modify it to meet the needs of the new functionality. Select **Save** to save your changes, then you can request the new functionality interface in the test environment, and verify its correctness using the modified mock data.
 
