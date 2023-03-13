@@ -36,6 +36,10 @@ AREX 比对测试是将相同的请求报文发送至不同的接口地址，比
 4. 请求发送成功后，在 **Compare Result** 中观察差异。
 
     ![比对差异](../resource/c2.compare.diff.png)
+    
+    将鼠标悬停在节点上，将显示该节点在响应报文中的具体位置。
+
+    ![比对差异](../resource/c2.differ.png)
 
 ## 比对测试配置
 
