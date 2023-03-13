@@ -227,7 +227,7 @@ The Node service is a simple service with an internal port of 3000 and an extern
 2. It depends on the Storage service, and this part does not need to be modified. If it is deployed independently, the address and port need to be modified.
 3. The internal port of the AREX analysis service is 8080, and the port exposed by Docker container is 8090.
 
-Note: Arex.ui.url is a special configuration item that is used to assemble the login link in the AREX email service. Because AREX's login requires users to enter their email address, and the link sent by the email service needs to point to the accessible AREX frontend address, Arex.ui.url must be configured to the actual frontend address, not the container address in Docker-Compose. If the configuration is incorrect, the link in the email notification will redirect to the wrong page.
+Note: `Arex.ui.url` is a special configuration item that is used to assemble the login link in the AREX email service. Because AREX's login requires users to enter their email address, and the link sent by the email service needs to point to the accessible AREX frontend address, Arex.ui.url must be configured to the actual frontend address, not the container address in Docker-Compose. If the configuration is incorrect, the link in the email notification will redirect to the wrong page.
 
 ### Configuring the AREX Storage Service
 

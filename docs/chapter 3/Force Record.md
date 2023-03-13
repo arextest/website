@@ -11,6 +11,12 @@ keywords:
 
 With AREX, you can verify the correctness of your system by recording a real online request and replaying it in your test environment. AREX's powerful mock mechanism will automatically mock all third-party dependencies during the recording process, perfectly reproducing the production data environment, resolving the challenges of constructing data and writing test cases in regression testing.
 
+:::tip
+
+Only service interfaces with AREX Agent deployed will be able to perform forced recording.
+
+:::
+
 ### Use Cases
 
 - **Reproduce the online issues in test environment**：If you need to debug a specific request in the production environment, you can force record the request with AREX, and then run the request again in test environment for debugging. During the recording process, AREX will collect and mock all dependencies, making the local data environment almost identical to the production environment, thus ensuring a successful reproduction of issues.
@@ -21,21 +27,19 @@ With AREX, you can verify the correctness of your system by recording a real onl
 
 1. Create a new request and specify its details with the case that needs to be recorded, including the request line (URL and method), request header, and request body.
 
-2. You can select the **action.record** icon ![record](../resource/recordicon.png) to force record the request as test cases.
+2. You can select the **action.record** icon ![record](../resource/recordicon.png). And the **Key**: "arex-force-record" and **Value**: "true" will be added in the request **Header**. Then select **Send** to record the request.
 
     ![强制录制](../resource/c3.force.record.png)
 
-    And the **Key**: "arex-force-record" and **Value**: "true" will be added in the request **Header**. Then select **Send** to record the request.
-
-    ![强制录制](../resource/c3.force.record2.png)
-
-## Step 2：Edit Mock data
-
-1. After sending the request, a Record ID with **Key**: "arex-record-id" and **Value**: "Record ID" will be generated in the response message.
+3. After sending the request, a Record ID with **Key**: "arex-record-id" and **Value**: "Record ID" will be generated in the response message.
 
     ![录制ID](../resource/c3.force.recordid.png)
 
-2. The newly added **Mock** is all the dependencies' data mocked during the recording process.
+4. Select **Save** to save the recorded data.
+
+## Step 2：Edit Mock data
+
+The newly added **Mock** is all the dependencies' data mocked during the recording process.
 
     ![mock](../resource/c3.mock.png)
 

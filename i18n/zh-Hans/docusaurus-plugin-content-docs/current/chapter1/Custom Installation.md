@@ -43,7 +43,7 @@ docker-compose -f docker-compose-distribute.yml ps
 
 ## 服务单独部署及非容器化安装
 
-如你不需要使用 AREX 自带的 MongoDB 数据存储服务，或是需要使用自己的分布式环境，对 Schedule、Storage 等高 CPU 服务进行扩缩容，那么你也可以进行服务单独部署及非容器化安装，单独安装服务。（不推荐用非容器化安装，有人提需求再说）
+如你不需要使用 AREX 自带的 MongoDB 数据存储服务，或是需要使用自己的分布式环境，对 Schedule、Storage 等高 CPU 服务进行扩缩容，那么你也可以进行服务单独部署及非容器化安装，单独安装服务。
 
 但需要自己完成服务间调用的配置。具体如下：
 
